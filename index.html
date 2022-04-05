@@ -64,10 +64,10 @@
         <p>Designer, Developer, Freelancer</p>
 
         <ul class="list-unstyled list-social">
-          <li><a href="https://www.facebook.com/profile.php?id=100011162383152"><i class="bi bi-facebook"></i></a></li>
- 
-          <li><a href="https://www.instagram.com/shaajiiii/"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/manu-shaji-5a0792234"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
         </ul>
       </div>
     </div>
@@ -337,12 +337,12 @@
             </div>
 
             <div class="col-lg-6">
-              <form action="" method="post" name="folio-form">
+              <form action="" method="post" name="folio-form" id="form1">
                 <div class="row gy-3">
 
                   <div class="col-lg-6">
                     <div class="form-group contact-block1">
-                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" required>
+                      <input type="text" name="name" class="form-control" id="name" placeholder="Your Name" >
                     </div>
                   </div>
 
@@ -393,10 +393,10 @@
       <div class="socials-media text-center">
 
         <ul class="list-unstyled">
-          <li><a href="https://www.facebook.com/profile.php?id=100011162383152"><i class="bi bi-facebook"></i></a></li>
-         
-          <li><a href="https://www.instagram.com/shaajiiii/"><i class="bi bi-instagram"></i></a></li>
-          <li><a href="https://www.linkedin.com/in/manu-shaji-5a0792234"><i class="bi bi-linkedin"></i></a></li>
+          <li><a href="#"><i class="bi bi-facebook"></i></a></li>
+          <li><a href="#"><i class="bi bi-twitter"></i></a></li>
+          <li><a href="#"><i class="bi bi-instagram"></i></a></li>
+          <li><a href="#"><i class="bi bi-linkedin"></i></a></li>
         </ul>
 
       </div>
@@ -422,8 +422,10 @@
 
   <!-- Template Main JS File -->
   <script src="assets/js/main.js"></script>
-
+ 
   <!--form script-->
+
+  
   <script>
     const scriptURL = 'https://script.google.com/macros/s/AKfycby0WdHh6R89yG6XDnBTETajoDlcbiuenrjC03gdaOi32beo4zTmOWTGPsavfX8qGFlOBA/exec'
     const form = document.forms['folio-form']
@@ -435,6 +437,36 @@
       .catch(error => console.error('Error!', error.message))
     })
     </script>
+
+  
+    <!--mods-->
+    <script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.js"></script>
+
+
+    <script>
+
+        jQuery.validator.addMethod("lettersonly", function(value, element) {// adding a method 
+  return this.optional(element) || /^[a-z]+$/i.test(value);
+}, "Letters only please"); 
+
+
+      $(document).ready(function(){
+        $("#form1").validate({
+          rules:{
+            name:{
+             lettersonly: true ,
+            
+            }
+
+          }
+        })
+
+      })
+    </script>
+
+
+
 
 </body>
 
