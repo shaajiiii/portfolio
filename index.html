@@ -447,7 +447,7 @@
     <script>
 
         jQuery.validator.addMethod("lettersonly", function(value, element) {// adding a method 
-  return this.optional(element) || /^[a-z]+$/i.test(value);
+  return this.optional(element) || /^[a-z ]+$/i.test(value);
 }, "Letters only please"); 
 
 
